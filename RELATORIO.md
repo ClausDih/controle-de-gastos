@@ -23,34 +23,34 @@ Resposta: 91.5 tok/s
 
 ## Missão 2 · Total
 M2.1 Quanto deu 0,10 + 0,20 no app?
-Resposta: 
+Resposta: No app deu 0,30.
 M2.2 Por que 0.1 + 0.2 não dá exatamente 0.3 no JavaScript?
-Resposta:
+Resposta: Porque o javascript não representa com exatidão numeros decimais, já que trabalha com binários. POr isso, acaba ocorrendo diferença no resultado final.
 
 ## Missão 3 · Remover
 M3.1 O agente mudou algo que você não pediu? O quê?
-Resposta:
+Resposta: Percebi que ele informa com texto quando nenhum gasto foi cadastrado.
 M3.2 Como o código sabe qual gasto remover?
-Resposta:
+Resposta: Ele passou a excluir os gastos considerando o id do gasto cadastrado. O botão de remover está vinculado ao id.
 
 ## Missão 4 · Filtrar
 M4.1 Qual foi o seu prompt da tentativa B?
-Resposta:
+Resposta: Planeje um filtro por categorias. O total deve acompanhar o filtro. Mostre qual a categoria selecionada. Se todas, informe. Se não houver gastos da categoria, informe. Tem que ser possível filtrar e depois voltar para todas.
 M4.2 Qual tentativa gerou o melhor plano, A ou B? Por quê?
-Resposta:
+Resposta: Eu acredito que o B, onde eu pude informar o que eu queria que o agente fizesse, e ele entendeu bem. 
 
 ## Bônus · Salvar
 B.1 Onde o localStorage guarda os dados?
-Resposta:
+Resposta: o localStorage guarda os dados (apenas String) no próprio navegador. TRabalha de forma síncrona e não envia nada a um servidor. Os dados permanecem apenas naquele navegador.
 B.2 Por que os gastos não aparecem em outro navegador?
-Resposta:
+Resposta: Não aparecem porque em outros navegadores, a lista aparece vazia. O Array passar por um json ao salvar e outro ao ler.
 
 ## Reflexão final
 R.1 Sem olhar o código, explique como um dos seus componentes recebe e altera os gastos.
-Resposta:
+Resposta: a aplicação recebe na tela as informações inseridas pelo usuário no formulario (descrição, valor e categoria). eu adiono as infos atráves do botão e essas infos são vão para App.jsx onde tem uma função que cuida dos cadastro. Lá também tem uma função para remover esses gastos.
 R.2 Em que momento você aceitou algo sem entender?
-Resposta:
+Resposta: Aceitei sem entender ele sugeriu fazer a soma dos gastos em centavos para evitar erros nos valores decimais. No começo, não entendi muito bem por que isso era necessário, mas depois compreendi melhor com a explicação do agente e ajuda do google.
 R.3 Quais decisões foram suas e quais foram do agente?
-Resposta:
+Resposta: Eu decidi quais ações deveriam ser executadas. O agente fez as sugestões de como fazer. A partir disso, eu aceitei as sugestões e pedi que executasse os planos.
 R.4 O que continuaria valendo se você trocasse o modelo?
-Resposta:
+Resposta: As instruções que eu coloquei o AGENTS.md valeriam, independente do agente. As decisões que aprovei também. 

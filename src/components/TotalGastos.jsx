@@ -1,10 +1,12 @@
 import { formatarMoeda } from '../utils/formatarMoeda.js'
 
-// Total dos gastos. O cálculo real entra na Missão 2; aqui só o layout.
-function TotalGastos({ total = 0 }) {
+// Total dos gastos. Quando há filtro ativo, o rótulo mostra a categoria.
+function TotalGastos({ total = 0, filtro = null }) {
+  const rotulo = filtro ? `Total · ${filtro}` : 'Total'
+
   return (
     <section className="total-gastos">
-      <h2 className="total-gastos__rotulo">Total</h2>
+      <h2 className="total-gastos__rotulo">{rotulo}</h2>
       <p className="total-gastos__valor">{formatarMoeda(total)}</p>
     </section>
   )

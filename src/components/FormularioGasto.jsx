@@ -1,14 +1,15 @@
 import { useState } from 'react'
+import { CATEGORIAS } from '../utils/categorias.js'
 import { converterValor } from '../utils/converterValor.js'
 
-const CATEGORIAS = ['Alimentação', 'Transporte', 'Lazer', 'Outros']
+const CATEGORIA_PADRAO = CATEGORIAS[0]
 
 // Formulário de cadastro de gasto.
 // Os campos são controlados aqui; a lista de gastos fica no App (onAdicionar).
 function FormularioGasto({ onAdicionar }) {
   const [descricao, setDescricao] = useState('')
   const [valor, setValor] = useState('')
-  const [categoria, setCategoria] = useState('Alimentação')
+  const [categoria, setCategoria] = useState(CATEGORIA_PADRAO)
   // erro guarda o campo problemático e a mensagem exibida na página.
   const [erro, setErro] = useState(null)
 
@@ -38,7 +39,7 @@ function FormularioGasto({ onAdicionar }) {
     // Envio bem-sucedido: limpa o formulário e a mensagem de erro.
     setDescricao('')
     setValor('')
-    setCategoria('Alimentação')
+    setCategoria(CATEGORIA_PADRAO)
     setErro(null)
   }
 

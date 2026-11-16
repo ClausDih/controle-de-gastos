@@ -135,7 +135,7 @@
 
 .lista-gastos__item {
   display: grid;
-  grid-template-columns: 1fr auto auto;
+  grid-template-columns: 1fr auto auto auto;
   gap: 12px;
   align-items: center;
   padding: 12px 0;
@@ -163,6 +163,68 @@
   font-weight: 600;
   text-align: right;
   min-width: 96px;
+}
+
+.lista-gastos__remover {
+  padding: 6px 10px;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  background: transparent;
+  color: var(--cor-erro);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    background-color 0.2s,
+    border-color 0.2s;
+}
+
+.lista-gastos__remover:hover {
+  border-color: #f3c3c3;
+  background: #fdeced;
+}
+
+/* Filtro */
+
+.filtro-gastos {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 16px 20px;
+  background: var(--cor-superficie);
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio);
+  box-shadow: var(--sombra);
+}
+
+.filtro-gastos__campo {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.filtro-gastos__campo label {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--cor-texto-suave);
+}
+
+.filtro-gastos__campo select {
+  padding: 9px 12px;
+  border: 1px solid var(--cor-borda);
+  border-radius: 8px;
+  background: var(--cor-superficie);
+}
+
+.filtro-gastos__resumo {
+  font-size: 14px;
+  color: var(--cor-texto-suave);
+}
+
+.filtro-gastos__resumo strong {
+  color: var(--cor-texto);
 }
 
 /* Total */
