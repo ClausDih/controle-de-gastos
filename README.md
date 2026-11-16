@@ -2,15 +2,64 @@
 
 This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
 
-Currently, two official plugins are available:
+Controle de Gastos
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Aplicação web desenvolvida em React e Vite para registrar, organizar e acompanhar gastos pessoais de forma simples e prática.
 
-## React Compiler
+• Funcionalidades
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Adicionar gastos: cadastro com descrição, valor e categoria.
 
-## Expanding the Oxlint configuration
+Validação: impede o cadastro sem descrição ou com valor inválido.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+Listagem: visualização dos gastos cadastrados.
+
+Remoção: exclusão de gastos individualmente.
+
+Total de gastos: cálculo automático dos valores registrados.
+
+Filtro por categoria: permite visualizar gastos de uma categoria específica ou todos os gastos.
+
+Armazenamento local: mantém os registros salvos no navegador utilizando localStorage.
+
+• Tecnologias utilizadas
+
+React
+
+JavaScript
+
+Vite
+
+CSS
+
+HTML5
+
+localStorage
+
+• Como executar o projeto
+
+Pré-requisito: ter o Node.js instalado.
+
+Clone o repositório:
+
+git clone https://github.com/ClausDih/controle-de-gastos.git
+
+Acesse a pasta:
+
+cd controle-de-gastos
+
+Instale as dependências:
+
+npm install
+
+Inicie a aplicação:
+
+npm run dev
+
+Acesse no navegador o endereço indicado pelo terminal.
+
+• Sobre o desenvolvimento
+
+Projeto desenvolvido como atividade prática de aprendizagem, utilizando agentes de IA para planejar e implementar funcionalidades de forma gradual.
+
+Durante o desenvolvimento, foram trabalhados conceitos de componentes React, gerenciamento de estado com useState, efeitos com useEffect, funções auxiliares e persistência de dados no navegador.
