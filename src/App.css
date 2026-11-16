@@ -79,6 +79,20 @@
   color: #9aa3b2;
 }
 
+.formulario-gasto__campo input[aria-invalid='true'] {
+  border-color: var(--cor-erro);
+  background: #fff6f6;
+}
+
+.formulario-gasto__erro {
+  padding: 10px 12px;
+  border: 1px solid #f3c3c3;
+  border-radius: 8px;
+  background: #fdeced;
+  color: var(--cor-erro);
+  font-size: 14px;
+}
+
 .formulario-gasto__botao {
   margin-top: 4px;
   padding: 11px 16px;

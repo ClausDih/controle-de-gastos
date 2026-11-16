@@ -1,12 +1,49 @@
-// Formulário de cadastro de gasto: por enquanto só o layout, sem estado.
-// A lógica (useState, validação e envio) entra na Missão 1.
-function FormularioGasto() {
+import { useState } from 'react'
+import { converterValor } from '../utils/converterValor.js'
+
+const CATEGORIAS = ['Alimentação', 'Transporte', 'Lazer', 'Outros']
+
+// Formulário de cadastro de gasto.
+// Os campos são controlados aqui; a lista de gastos fica no App (onAdicionar).
+function FormularioGasto({ onAdicionar }) {
+  const [descricao, setDescricao] = useState('')
+  const [valor, setValor] = useState('')
+  const [categoria, setCategoria] = useState('Alimentação')
+  // erro guarda o campo problemático e a mensagem exibida na página.
+  const [erro, setErro] = useState(null)
+
+  function lidarComEnvio(evento) {
+    evento.preventDefault()
+
+    const descricaoLimpa = descricao.trim()
+    if (descricaoLimpa === '') {
+      setErro({ campo: 'descricao', mensagem: 'Informe uma descrição.' })
+      return
+    }
+
+    const valorNumerico = converterValor(valor)
+    if (!Number.isFinite(valorNumerico) || valorNumerico <= 0) {
+      setErro({ campo: 'valor', mensagem: 'Informe um valor maior que zero.' })
+      return
+    }
+
+    onAdicionar({
+      id: crypto.randomUUID(),
+      descricao: descricaoLimpa,
+      // Arredonda em 2 casas para não guardar 12.500000000000002.
+      valor: Math.round(valorNumerico * 100) / 100,
+      categoria,
+    })
+
+    // Envio bem-sucedido: limpa o formulário e a mensagem de erro.
+    setDescricao('')
+    setValor('')
+    setCategoria('Alimentação')
+    setErro(null)
+  }
+
   return (
-    <form
-      className="formulario-gasto"
-      // Evita que o botão recarregue a página enquanto não há lógica de envio.
-      onSubmit={(evento) => evento.preventDefault()}
-    >
+    <form className="formulario-gasto" onSubmit={lidarComEnvio} noValidate>
       <h2 className="formulario-gasto__titulo">Novo gasto</h2>
 
       <div className="formulario-gasto__campo">
@@ -17,6 +54,9 @@ function FormularioGasto() {
           type="text"
           placeholder="Ex.: Almoço no restaurante"
           autoComplete="off"
+          value={descricao}
+          onChange={(evento) => setDescricao(evento.target.value)}
+          aria-invalid={erro?.campo === 'descricao'}
         />
       </div>
 
@@ -29,18 +69,33 @@ function FormularioGasto() {
           type="text"
           inputMode="decimal"
           placeholder="0,00"
+          value={valor}
+          onChange={(evento) => setValor(evento.target.value)}
+          aria-invalid={erro?.campo === 'valor'}
         />
       </div>
 
       <div className="formulario-gasto__campo">
         <label htmlFor="categoria">Categoria</label>
-        <select id="categoria" name="categoria" defaultValue="Alimentação">
-          <option value="Alimentação">Alimentação</option>
-          <option value="Transporte">Transporte</option>
-          <option value="Lazer">Lazer</option>
-          <option value="Outros">Outros</option>
+        <select
+          id="categoria"
+          name="categoria"
+          value={categoria}
+          onChange={(evento) => setCategoria(evento.target.value)}
+        >
+          {CATEGORIAS.map((nomeCategoria) => (
+            <option key={nomeCategoria} value={nomeCategoria}>
+              {nomeCategoria}
+            </option>
+          ))}
         </select>
       </div>
+
+      {erro && (
+        <p className="formulario-gasto__erro" role="alert">
+          {erro.mensagem}
+        </p>
+      )}
 
       <button type="submit" className="formulario-gasto__botao">
         Adicionar

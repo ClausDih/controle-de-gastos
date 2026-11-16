@@ -17,13 +17,13 @@ Resposta: Ele aplicou resposta e comentários do código em português, não ins
 
 ## Missão 1 · Adicionar
 M1.1 Como o app trata "12,50" com vírgula? Quem decidiu isso: você ou o agente?
-Resposta:
+Resposta: O agente aceitou os valores com vírgula já pensando no formato brasileiro de moeda.
 M1.2 Quantas tool calls a missão usou?
-Resposta:
+Resposta: 91.5 tok/s
 
 ## Missão 2 · Total
 M2.1 Quanto deu 0,10 + 0,20 no app?
-Resposta:
+Resposta: 
 M2.2 Por que 0.1 + 0.2 não dá exatamente 0.3 no JavaScript?
 Resposta:
 
