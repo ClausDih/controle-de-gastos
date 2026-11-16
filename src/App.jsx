@@ -2,6 +2,7 @@ import { useState } from 'react'
 import FormularioGasto from './components/FormularioGasto.jsx'
 import ListaGastos from './components/ListaGastos.jsx'
 import TotalGastos from './components/TotalGastos.jsx'
+import { calcularTotal } from './utils/calcularTotal.js'
 import './App.css'
 
 function App() {
@@ -12,6 +13,9 @@ function App() {
     // Forma funcional: não depende do valor atual de "gastos".
     setGastos((gastosAnteriores) => [...gastosAnteriores, novoGasto])
   }
+
+  // Recalculado a cada render: todo gasto novo atualiza o total.
+  const total = calcularTotal(gastos)
 
   return (
     <main className="app">
@@ -25,8 +29,7 @@ function App() {
 
         <div className="app__painel">
           <ListaGastos gastos={gastos} />
-          {/* Total fixo em zero: o cálculo com reduce entra na Missão 2. */}
-          <TotalGastos total={0} />
+          <TotalGastos total={total} />
         </div>
       </div>
     </main>
