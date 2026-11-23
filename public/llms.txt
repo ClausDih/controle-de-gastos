@@ -1,0 +1,15 @@
+# Controle de Gastos
+
+> Aplicativo web para anotar gastos pessoais e acompanhar o total.
+
+## Sobre
+
+O Controle de Gastos permite cadastrar um gasto com descrição, valor e categoria,
+filtrar a lista por categoria, remover itens e ver o total somado em reais (R$).
+Os dados ficam salvos no `localStorage` do navegador, então a lista continua
+disponível quando a página é recarregada.
+
+## Links
+
+- [Aplicação](/)
+- [Especificação do llms.txt](https://llmstxt.org/)

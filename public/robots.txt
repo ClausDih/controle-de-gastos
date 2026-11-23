@@ -1,0 +1,3 @@
+# Robots do Controle de Gastos
+User-agent: *
+Allow: /
